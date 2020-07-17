@@ -1,10 +1,10 @@
-import React from 'react';
 import { ArrowLeftCircleFill } from 'react-bootstrap-icons';
+import React from 'react';
 
-export function Comments() {
+export function Delete() {
   return (
     <>
-      <ArrowLeftCircleFill /> 1000
+      <ArrowLeftCircleFill /> Delete
     </>
   );
 }
