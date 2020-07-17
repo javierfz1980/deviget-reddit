@@ -1,14 +1,14 @@
 export enum ACTION_TYPES {
-  fetchPosts = 'fetchPosts',
-  fetchPostsSuccess = 'fetchPostsSuccess',
-  fetchPostsError = 'fetchPostsError',
-  selectPost = 'selectPost',
-  removePost = 'removePost',
-  addToFavs = 'addToFavs',
-  removeFromFavs = 'removeFromFavs',
-  restoreAllPosts = 'restoreAllPosts',
-  deleteAllPosts = 'deleteAllPosts',
-  resetState = 'resetState',
+  FETCH_POSTS = 'FETCH_POSTS',
+  FETCH_POSTS_SUCCESS = 'FETCH_POSTS_SUCCESS',
+  FETCH_POSTS_ERROR = 'FETCH_POSTS_ERROR',
+  SELECT_POST = 'SELECT_POST',
+  REMOVE_POST = 'REMOVE_POST',
+  ADD_TO_FAVS = 'ADD_TO_FAVS',
+  REMOVE_FROM_FAVS = 'REMOVE_FROM_FAVS',
+  RESTORE_ALL_POSTS = 'RESTORE_ALL_POSTS',
+  DELETE_ALL_POSTS = 'DELETE_ALL_POSTS',
+  RESET_STATE = 'RESET_STATE',
 }
 
 export interface Action {

@@ -10,7 +10,7 @@ import { ACTION_TYPES } from '../../store/actions';
 export function PostsList() {
   const dispatch = useDispatch();
 
-  dispatch({ type: ACTION_TYPES.fetchPosts });
+  dispatch({ type: ACTION_TYPES.FETCH_POSTS });
 
   return (
     <ListGroup className={styles.listGroup}>

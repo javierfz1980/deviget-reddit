@@ -29,14 +29,14 @@ export const initialRedditState: RedditState = {
 export function redditStateReducer(state: RedditState = initialRedditState, action: Action): RedditState {
   console.log(action);
   switch (action.type) {
-    case ACTION_TYPES.fetchPosts:
+    case ACTION_TYPES.FETCH_POSTS:
       return {
         ...state,
         loading: true,
         initialized: true,
         shouldRequest: true,
       };
-    case ACTION_TYPES.fetchPostsSuccess:
+    case ACTION_TYPES.FETCH_POSTS_SUCCESS:
       const posts = [...state.posts, ...action.payload.posts];
       return {
         ...state,
