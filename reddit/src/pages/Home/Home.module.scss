@@ -1,0 +1,57 @@
+@import 'src/styles/props';
+
+.homeWrapper {
+  height: 100%;
+  display: flex;
+
+  .listWrapper {
+    height: 100%;
+    padding: 20px;
+    background-color: #ededed;
+    width: 300px;
+    transition: all 0.5s ease;
+
+    @media (max-width: $break-small-mobile) {
+      width: 100vw;
+      z-index: 101;
+      transition: all 0.5s ease;
+    }
+  }
+
+  .opener {
+    background-color: rgba(0, 0, 0, 0);
+    width: 75px;
+    height: 100%;
+    z-index: 100;
+    left: 0px;
+    position: absolute;
+    display: none;
+
+    @media (max-width: $break-small-mobile) {
+      display: block;
+    }
+
+    .icon {
+      margin-left: 10px;
+      margin-top: 10px;
+      color: #ededed;
+      cursor: pointer;
+    }
+  }
+
+  @media (max-width: $break-small-mobile) {
+    .listClosed {
+      transform: translateX(-100vw);
+    }
+  }
+
+  .contentWrapper {
+    flex-grow: 1;
+    padding: 20px;
+    max-width: 900px;
+
+    @media (max-width: $break-small-mobile) {
+      position: absolute;
+    }
+  }
+}
