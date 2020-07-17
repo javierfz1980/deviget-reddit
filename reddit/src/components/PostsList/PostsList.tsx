@@ -1,11 +1,17 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
 
 import styles from './PostsList.module.scss';
 import { PostListItem } from './PostListItem/PostListItem';
 import { SinglePostItem } from '../../models';
 import { ListGroup } from 'react-bootstrap';
+import { ACTION_TYPES } from '../../store/actions';
 
 export function PostsList() {
+  const dispatch = useDispatch();
+
+  dispatch({ type: ACTION_TYPES.fetchPosts });
+
   return (
     <ListGroup className={styles.listGroup}>
       {items.map(item => (
