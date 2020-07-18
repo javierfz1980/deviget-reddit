@@ -1,11 +1,11 @@
 export const Routes = {
   home: {
     path: '/',
-    label: 'Home',
+    label: 'home',
   },
   gallery: {
     path: '/gallery',
-    label: 'Gallery',
+    label: 'gallery',
   },
 };
 
