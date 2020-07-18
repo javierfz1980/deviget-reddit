@@ -1,6 +1,11 @@
 import React from 'react';
-import { ArrowLeftCircleFill } from 'react-bootstrap-icons';
+import { BookmarkPlus } from 'react-bootstrap-icons';
 
 export function Fav() {
-  return <ArrowLeftCircleFill />;
+  return (
+    <>
+      <BookmarkPlus />
+      &nbsp; Add
+    </>
+  );
 }

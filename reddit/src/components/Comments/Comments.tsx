@@ -1,10 +1,10 @@
 import React from 'react';
-import { ArrowLeftCircleFill } from 'react-bootstrap-icons';
+import { Pen } from 'react-bootstrap-icons';
 
-export function Comments() {
+export function Comments({ comments }: { comments: number }) {
   return (
     <>
-      <ArrowLeftCircleFill /> 1000
+      <Pen /> {comments}
     </>
   );
 }

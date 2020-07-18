@@ -27,7 +27,7 @@ export const initialRedditState: RedditState = {
 };
 
 export function redditStateReducer(state: RedditState = initialRedditState, action: Action): RedditState {
-  console.log(action);
+  console.log('after:', action?.payload?.after);
   switch (action.type) {
     case ACTION_TYPES.FETCH_POSTS:
       return {

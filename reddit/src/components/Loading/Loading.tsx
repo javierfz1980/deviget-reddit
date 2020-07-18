@@ -1,5 +1,10 @@
 import React from 'react';
+import { Spinner } from 'react-bootstrap';
 
 export function Loading() {
-  return <div>Loading</div>;
+  return (
+    <Spinner animation="border" role="status">
+      <span className="sr-only">Loading...</span>
+    </Spinner>
+  );
 }

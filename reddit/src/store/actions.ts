@@ -15,3 +15,5 @@ export interface Action {
   type: ACTION_TYPES;
   payload?: any;
 }
+
+export type ActionDispatcher = (action: Action) => void;

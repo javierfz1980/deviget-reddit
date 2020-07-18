@@ -1,6 +1,28 @@
 .cardWrapper {
-  .card {
+  /*.card {
     border: none;
     padding: 0px;
+  }*/
+  .body {
+    display: flex;
+
+    .title {
+      flex-grow: 1;
+      padding: 10px;
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      height: 85px;
+    }
+  }
+  .author {
+    padding: 10px;
+  }
+
+  .footer {
+    padding: 0px 10px 10px 10px;
+    display: flex;
+    justify-content: space-around;
   }
 }
