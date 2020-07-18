@@ -55,6 +55,7 @@ $listWidth: 400px;
 
     @media (max-width: $break-small-mobile) {
       position: absolute;
+      width: 100%;
     }
   }
 }
