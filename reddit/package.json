@@ -38,7 +38,7 @@
     "typescript": "3.9.5"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "export HTTPS=true&&react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "test:no-watch": "CI=true npm run test",
