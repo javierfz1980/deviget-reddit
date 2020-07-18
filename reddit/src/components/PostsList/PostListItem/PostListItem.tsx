@@ -20,7 +20,7 @@ export function PostListItem({ item, onItemSelected }: Props) {
     <div className={styles.cardWrapper}>
       <div className={styles.body} onClick={select}>
         <div className={styles.image}>
-          <img alt="preview" src={item.thumbnail} />
+          <img alt="preview" src={item.thumbnail || 'images/placeholder-small.png'} />
         </div>
         <div className={styles.title}>{item.title}</div>
       </div>
