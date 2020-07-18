@@ -41,6 +41,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "test:no-watch": "CI=true npm run test",
     "eject": "react-scripts eject",
     "lint": "eslint './src/**/*.{ts,tsx}' --max-warnings=0"
   },
@@ -50,7 +51,7 @@
   "husky": {
     "hooks": {
       "pre-commit": "npm run lint",
-      "pre-push": "npm run lint && npm run test && npm run build"
+      "pre-push": "npm run lint && npm run test:no-watch && npm run build"
     }
   },
   "browserslist": {
