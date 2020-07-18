@@ -7,9 +7,9 @@ import { ACTION_TYPES, ActionDispatcher } from '../../store/actions';
 
 export function Delete({ itemId }: { itemId: number }) {
   const dispatch = useDispatch();
-  const posts = useSelector(({ redditState }) => redditState.posts);
+  const { posts, dismissed } = useSelector(({ redditState }) => redditState);
   const [show, setShow] = useState<boolean>(false);
-  const showDeleteButton = posts.find(post => post.id === itemId);
+  const showDeleteButton = posts.find(post => post.id === itemId) || dismissed;
 
   const close = handleClose(setShow);
   const confirm = handleConfirm(dispatch, setShow, itemId);

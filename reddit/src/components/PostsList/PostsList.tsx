@@ -32,9 +32,11 @@ export function PostsList({ onItemSelected }: Props) {
         next={next}
         hasMore={hasMore}
         loader={
-          <div className={styles.loading}>
-            <Loading />
-          </div>
+          !dismissed && (
+            <div className={styles.loading}>
+              <Loading />
+            </div>
+          )
         }
         endMessage={<h5 className={styles.eof}>No more results...</h5>}
         scrollableTarget="scrollableDiv">

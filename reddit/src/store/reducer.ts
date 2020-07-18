@@ -17,20 +17,7 @@ export interface RedditState {
 export const initialRedditState: RedditState = {
   shouldRequest: false,
   posts: [],
-  gallery: [
-    'https://i.redd.it/kfjchmbnkgb51.jpg',
-    'https://i.imgur.com/XfQUpD3.jpg',
-    'https://i.redd.it/322c1u01lgb51.png',
-    'https://i.redd.it/kfjchmbnkgb51.jpg',
-    'https://i.imgur.com/XfQUpD3.jpg',
-    'https://i.redd.it/322c1u01lgb51.png',
-    'https://i.redd.it/kfjchmbnkgb51.jpg',
-    'https://i.imgur.com/XfQUpD3.jpg',
-    'https://i.redd.it/322c1u01lgb51.png',
-    'https://i.redd.it/kfjchmbnkgb51.jpg',
-    'https://i.imgur.com/XfQUpD3.jpg',
-    'https://i.redd.it/322c1u01lgb51.png',
-  ],
+  gallery: [],
   after: '',
   hasMore: true,
   selectedItem: undefined,
@@ -89,6 +76,15 @@ export function redditStateReducer(state: RedditState = initialRedditState, acti
         ...state,
         gallery: state.gallery.filter(fav => fav !== action.payload),
       };
+    case ACTION_TYPES.DELETE_ALL_POSTS:
+      return {
+        ...state,
+        posts: [],
+        dismissed: true,
+        shouldRequest: false,
+      };
+    case ACTION_TYPES.RESET_STATE:
+      return initialRedditState;
     default:
       return state;
   }

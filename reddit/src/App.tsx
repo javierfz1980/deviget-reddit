@@ -6,6 +6,7 @@ import { Routes } from './constants';
 import { Header } from './components';
 import { Home } from './pages';
 import { Gallery } from './pages';
+import { GlobalActions } from './components/GlobalActions';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
               <Redirect to={Routes.home.path} />
             </Route>
           </Switch>
+          <GlobalActions />
         </section>
       </div>
     </Router>
