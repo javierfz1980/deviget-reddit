@@ -10,10 +10,12 @@ $listWidth: 400px;
     height: 100%;
     background-color: #ededed;
     width: $listWidth;
+    min-width: $listWidth;
     transition: all 0.5s ease;
 
     @media (max-width: $break-small-mobile) {
       width: 100vw;
+      min-width: 100vw;
       z-index: 101;
       transition: all 0.5s ease;
       top: 0;
