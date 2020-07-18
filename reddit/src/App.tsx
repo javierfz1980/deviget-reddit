@@ -13,6 +13,7 @@ function App() {
     <Router>
       <div className={styles.mainWrapper}>
         <header>
+          asd
           <Header />
         </header>
         <section className={styles.sectionWrapper}>
