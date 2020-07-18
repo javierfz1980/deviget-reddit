@@ -12,7 +12,11 @@ import { ListHeader } from './PostListItem/ListHeader/ListHeader';
 import { Loading } from '../Loading';
 import { NoContent } from '../NoContent';
 
-export function PostsList() {
+interface Props {
+  onItemSelected: () => void;
+}
+
+export function PostsList({ onItemSelected }: Props) {
   const dispatch = useDispatch();
   const { posts, initialized, hasMore, dismissed } = useSelector(({ redditState }) => redditState);
   const next = fetchPosts(dismissed, dispatch);
@@ -20,7 +24,7 @@ export function PostsList() {
   if (!initialized) {
     dispatch({ type: ACTION_TYPES.FETCH_POSTS });
   }
-  console.log(!posts || !posts.length);
+
   return (
     <div className={styles.infiniteContainer} id="scrollableDiv">
       <InfiniteScroll
@@ -36,15 +40,15 @@ export function PostsList() {
         scrollableTarget="scrollableDiv">
         <div>
           <ListGroup className={styles.listGroup}>
+            <ListGroup.Item className={`${styles.listItem}`}>
+              <ListHeader />
+            </ListGroup.Item>
             <TransitionGroup>
-              <ListGroup.Item className={`${styles.listItem}`}>
-                <ListHeader />
-              </ListGroup.Item>
               {posts &&
-                posts.map((item, idx) => (
-                  <CSSTransition key={item.id} timeout={500 * idx} classNames="item">
+                posts.map(item => (
+                  <CSSTransition key={item.id} timeout={500} classNames="item">
                     <ListGroup.Item className={styles.listItem}>
-                      <PostListItem item={item as SinglePostItem} />
+                      <PostListItem item={item as SinglePostItem} onItemSelected={onItemSelected} />
                     </ListGroup.Item>
                   </CSSTransition>
                 ))}

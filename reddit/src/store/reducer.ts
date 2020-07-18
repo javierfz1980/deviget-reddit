@@ -46,6 +46,36 @@ export function redditStateReducer(state: RedditState = initialRedditState, acti
         loading: false,
         shouldRequest: false,
       };
+    case ACTION_TYPES.SELECT_POST:
+      return {
+        ...state,
+        selectedItem: action.payload,
+        posts: [
+          ...state.posts.map(post =>
+            post.id !== action.payload.id
+              ? post
+              : {
+                  ...post,
+                  read: true,
+                },
+          ),
+        ],
+      };
+    case ACTION_TYPES.REMOVE_POST:
+      return {
+        ...state,
+        posts: state.posts.filter(post => post.id !== action.payload),
+      };
+    case ACTION_TYPES.ADD_TO_FAVS:
+      return {
+        ...state,
+        favs: [...state.favs, action.payload],
+      };
+    case ACTION_TYPES.REMOVE_FROM_FAVS:
+      return {
+        ...state,
+        favs: state.favs.filter(fav => fav.id !== action.payload.id),
+      };
     default:
       return state;
   }

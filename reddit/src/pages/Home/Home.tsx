@@ -10,10 +10,8 @@ export function Home() {
 
   return (
     <div className={styles.homeWrapper}>
-      <div
-        className={`${styles.listWrapper} ${!open ? styles.listClosed : ''}`}
-        onMouseOver={() => setOpen(open => !open)}>
-        <PostsList />
+      <div className={`${styles.listWrapper} ${!open ? styles.listClosed : ''}`}>
+        <PostsList onItemSelected={() => setOpen(open => false)} />
       </div>
       <div className={styles.opener}>
         <Icon size={50} className={styles.icon} onMouseOver={() => setOpen(open => !open)} />

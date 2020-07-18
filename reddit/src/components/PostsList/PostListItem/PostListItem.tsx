@@ -1,4 +1,5 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
 
 import styles from './PostListItem.module.scss';
 import { SinglePostItem } from '../../../models';
@@ -7,14 +8,19 @@ import { Comments } from '../../Comments';
 import { Delete } from './Delete';
 import { ago } from '../../../utils';
 import { Read } from './Read';
+import { ACTION_TYPES, ActionDispatcher } from '../../../store/actions';
 
 interface Props {
   item: SinglePostItem;
+  onItemSelected: () => void;
 }
-export function PostListItem({ item }: Props) {
+export function PostListItem({ item, onItemSelected }: Props) {
+  const dispatch = useDispatch();
+  const select = handleSelect(item, onItemSelected, dispatch);
+
   return (
     <div className={styles.cardWrapper}>
-      <div className={styles.body}>
+      <div className={styles.body} onClick={select}>
         <div className={styles.image}>
           <img alt="preview" src={item.thumbnail} />
         </div>
@@ -25,7 +31,6 @@ export function PostListItem({ item }: Props) {
         <div>
           <Read read={item.read} />
         </div>
-
         <div>
           <Comments comments={item.comments} />
         </div>
@@ -33,21 +38,16 @@ export function PostListItem({ item }: Props) {
           <Fav />
         </div>
         <div>
-          <Delete />
+          <Delete itemId={item.id} />
         </div>
       </div>
-      {/*<Card className={styles.card}>
-        <Card.Img variant="top" src={item.thumbnail} />
-        <Card.Body>
-          <Card.Text>{item.title}</Card.Text>
-          <Card.Text>{item.author + ' - ' + ago(item.created)}</Card.Text>
-        </Card.Body>
-        <Card.Footer className="text-muted">
-          <Fav />
-          <Comments />
-          <Delete />
-        </Card.Footer>
-      </Card>*/}
     </div>
   );
+}
+
+function handleSelect(item: SinglePostItem, onItemSelected: () => void, dispatch: ActionDispatcher) {
+  return () => {
+    onItemSelected();
+    dispatch({ type: ACTION_TYPES.SELECT_POST, payload: item });
+  };
 }

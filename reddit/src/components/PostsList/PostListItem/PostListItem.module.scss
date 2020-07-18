@@ -1,10 +1,7 @@
 .cardWrapper {
-  /*.card {
-    border: none;
-    padding: 0px;
-  }*/
   .body {
     display: flex;
+    cursor: pointer;
 
     .title {
       flex-grow: 1;
