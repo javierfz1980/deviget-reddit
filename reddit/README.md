@@ -1,54 +1,74 @@
-# Front-end Test
+# Deviget code challenge
 
-## Objective
-We would like to have you complete the following code test so we can evaluate your Front-end skills.  Please place your code in a public Github repository and commit each step of your process so we can review it.
+<p align="center">
+  <img src="https://sm.ign.com/ign_es/screenshot/default/reddit-logo-full-1_75xh.png" width="400">
+</p>
 
-Your assignment is to create a simple Reddit client that shows the top 50 entries from Reddit - www.reddit.com/top
+### Reddit Deviget Challenge React + Typescript + Redux + Css modules + based on CRA [Create React App](https://github.com/facebook/create-react-app).
 
-## Show your work
+## Index
+- [App description](#app-description)
+- [App requirements](#app-requirements)
+- [Start](#start)
+- [MAin Stack](#main-stack)
+- [Live demo](#live-demo)
+- [Authors](#authors)
 
-1.  Create a Public repository
-2.  Commit each step of your process so we can follow your thought process.
+## App description
 
-## What to show
-To do this please follow these guidelines and use the front-end technology we talked about during your interview (Specific Javascript Framework).  If you are using ReactJS, you must incorporate Redux.
+Simple Reddit client that shows the top 50 entries from Reddit - www.reddit.com/top
 
 The app should be able to show data from each entry such as:
 
-    - Title (at its full length, so take this into account when sizing your cells)
-    - Author
-    - entry date, following a format like “x hours ago” 
-    - A thumbnail for those who have a picture.
-    - Number of comments
-    - Unread status
+```
+- Title (at its full length, so take this into account when sizing your cells)
+- Author
+- entry date, following a format like “x hours ago” 
+- A thumbnail for those who have a picture.
+- Number of comments
+- Unread status
+```
+## App requirements
 
-In addition, for those having a picture (besides the thumbnail), please allow the user to tap on the thumbnail to be sent to the full sized picture.
+- Pagination support
+- Saving pictures in the picture gallery
+- App state-preservation/restoration
+- Indicator of unread/read post (updated status, after post it’s selected)
+- Dismiss Post Button (remove the cell from list. Animations required)
+- Dismiss All Button (remove all posts. Animations required)
+- Support split layout (left side: all posts / right side: detail post)
+- Responsive design
 
-## What to Include
+## Start 
 
-    - Pagination support
-    - Saving pictures in the picture gallery
-    - App state-preservation/restoration
-    - Indicator of unread/read post (updated status, after post it’s selected)
-    - Dismiss Post Button (remove the cell from list. Animations required)
-    - Dismiss All Button (remove all posts. Animations required)
-    - Support split layout (left side: all posts / right side: detail post)
-    - Responsive design
-
-## Resources
-
-    - Reddit API - http://www.reddit.com/dev/api
-    - Example JSON file (top.json) is listed.
-    - Example Video of functionality is attached
-    
-## Deliverables we expect:
-* URL where the app can be viewed and seen working (use any platform of your preference: heroku.com, aws.amazon.com, etc)
-* Code in a public Github repo
-* README file with the decisions taken and important notes
-    
-## Time Spent
-You need to fully complete the challenge. We suggest not to spend more than 5 days total.  Please make commits as often as possible so we can see the time you spent and please do not make one commit.  We will evaluate the code and time spent.
+Clone repository (`git clone https://github.com/javierfz1980/Front-end/tree/master/reddit`)
  
-What we want to see is how well you handle yourself given the time you spend on the problem, how you think, and how you prioritize when time is sufficient to solve everything.
+```bash
+ cd reddit
+ yarn / npm install
+ npm run start:local //This will open up a browser window on http://localhost:5000
+ 
+ ```
+## Main Stack
 
-Please email your solution as soon as you have completed the challenge or the time is up.
+* [ReactJS](https://reactjs.org/) - Core frontend framework.
+* [Create React App](https://github.com/facebook/create-react-app) - React cli.
+* [Typescript](https://www.typescriptlang.org/) - Javascript superset for typing.
+* [React-bootstrap](https://react-bootstrap.github.io/) - React components for faster and easier web development (wanted to test a new one).
+* [Redux](https://github.com/reduxjs/redux) - State management library.
+* [Redux](https://github.com/reduxjs/redux) - State management library.
+* [Redux Observabbles](https://redux-observable.js.org/) - State actions side effects library based on RxJs.
+* [Axios](https://github.com/axios/axios) - Promise based HTTP client.
+* [React i18n](https://react.i18next.com/) - React library for i18n.
+* [Jest](https://jestjs.io/) - JavaScript Testing Framework.
+
+Also Prettier, husky, moment, etc...
+
+## Live demo
+
+- Live app [link](https://deviget-reddit.herokuapp.com/).
+- Source code [here](https://github.com/javierfz1980/Front-end/tree/master/reddit). 
+
+## Author
+
+* **Javier Fernandez [github profile](https://github.com/javierfz1980)**
