@@ -5,3 +5,4 @@ export * from './Loading';
 export * from './NoContent';
 export * from './PostsList';
 export * from './SelectedPost';
+export * from './Dot';

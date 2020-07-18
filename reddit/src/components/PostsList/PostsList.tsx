@@ -1,14 +1,14 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import InfiniteScroll from 'react-infinite-scroll-component';
 
 import styles from './PostsList.module.scss';
 import { PostListItem } from './PostListItem/PostListItem';
 import { SinglePostItem } from '../../models';
 import { ListGroup } from 'react-bootstrap';
 import { ACTION_TYPES, ActionDispatcher } from '../../store/actions';
-import InfiniteScroll from 'react-infinite-scroll-component';
-import { ListHeader } from './PostListItem/ListHeader/ListHeader';
+import { PostsListHeader } from './PostsListHeader/PostsListHeader';
 import { Loading } from '../Loading';
 import { NoContent } from '../NoContent';
 
@@ -41,7 +41,7 @@ export function PostsList({ onItemSelected }: Props) {
         <div>
           <ListGroup className={styles.listGroup}>
             <ListGroup.Item className={`${styles.listItem}`}>
-              <ListHeader />
+              <PostsListHeader />
             </ListGroup.Item>
             <TransitionGroup>
               {posts &&

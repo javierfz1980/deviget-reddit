@@ -5,9 +5,9 @@ import styles from './PostListItem.module.scss';
 import { SinglePostItem } from '../../../models';
 import { Fav } from '../../Fav';
 import { Comments } from '../../Comments';
-import { Delete } from './Delete';
+import { PostListItemDelete } from './PostListItemDelete';
+import { PostListItemRead } from './PostListItemRead';
 import { ago } from '../../../utils';
-import { Read } from './Read';
 import { ACTION_TYPES, ActionDispatcher } from '../../../store/actions';
 
 interface Props {
@@ -26,19 +26,19 @@ export function PostListItem({ item, onItemSelected }: Props) {
         </div>
         <div className={styles.title}>{item.title}</div>
       </div>
-      <div className={styles.author}>{item.author + ' - ' + ago(item.created)}</div>
+      <div className={styles.author}>
+        <span>{item.author + ' - ' + ago(item.created)}</span>
+        <PostListItemRead read={item.read} />
+      </div>
       <div className={styles.footer}>
-        <div>
-          <Read read={item.read} />
-        </div>
         <div>
           <Comments comments={item.comments} />
         </div>
         <div>
-          <Fav />
+          <Fav item={item} />
         </div>
         <div>
-          <Delete itemId={item.id} />
+          <PostListItemDelete itemId={item.id} />
         </div>
       </div>
     </div>
