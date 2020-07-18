@@ -3,9 +3,9 @@ export const Routes = {
     path: '/',
     label: 'Home',
   },
-  favs: {
-    path: '/favs',
-    label: 'Favs',
+  gallery: {
+    path: '/gallery',
+    label: 'Gallery',
   },
 };
 

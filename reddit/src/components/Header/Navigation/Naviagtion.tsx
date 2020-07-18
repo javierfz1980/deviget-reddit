@@ -4,22 +4,25 @@ import { useSelector } from 'react-redux';
 import { useLocation, Link } from 'react-router-dom';
 
 import { Routes } from '../../../constants';
+import { Bookmark } from 'react-bootstrap-icons';
 
 export function Navigation() {
-  const favs = useSelector(({ redditState }) => redditState.favs);
+  const favs = useSelector(({ redditState }) => redditState.gallery);
   const location = useLocation();
 
   return (
     <Nav className="justify-content-end" activeKey={location.pathname}>
       <Nav.Item>
         <Nav.Link eventKey={Routes.home.path} as="div">
-          <Link to={Routes.home.path}>Home</Link>
+          <Link to={Routes.home.path}> {Routes.home.label}</Link>
         </Nav.Link>
       </Nav.Item>
       <Nav.Item>
-        <Nav.Link eventKey={Routes.favs.path} as="div">
-          <Link to={Routes.favs.path}>
-            Favs <Badge variant="info">{favs?.length || 0}</Badge>
+        <Nav.Link eventKey={Routes.gallery.path} as="div">
+          <Link to={Routes.gallery.path}>
+            <Bookmark />
+            {' ' + Routes.gallery.label + ' '}
+            <Badge variant="info">{favs?.length || 0}</Badge>
           </Link>
         </Nav.Link>
       </Nav.Item>

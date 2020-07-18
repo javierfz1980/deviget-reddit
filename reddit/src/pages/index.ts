@@ -1,3 +1,3 @@
 export * from './Home';
-export * from './Favs';
+export * from './Gallery';
 export * from './NotFound';

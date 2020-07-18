@@ -1,5 +1,5 @@
 import React from 'react';
 
-export function Favs() {
+export function Gallery() {
   return <div>Favs</div>;
 }

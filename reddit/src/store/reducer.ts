@@ -5,7 +5,7 @@ import { SinglePostItem } from '../models';
 export interface RedditState {
   shouldRequest: boolean;
   posts: SinglePostItem[];
-  favs: SinglePostItem[];
+  gallery: string[];
   after: string;
   hasMore: boolean;
   selectedItem: SinglePostItem | undefined;
@@ -17,7 +17,7 @@ export interface RedditState {
 export const initialRedditState: RedditState = {
   shouldRequest: false,
   posts: [],
-  favs: [],
+  gallery: [],
   after: '',
   hasMore: true,
   selectedItem: undefined,
@@ -69,12 +69,12 @@ export function redditStateReducer(state: RedditState = initialRedditState, acti
     case ACTION_TYPES.ADD_TO_FAVS:
       return {
         ...state,
-        favs: [...state.favs, action.payload],
+        gallery: [...state.gallery, action.payload],
       };
     case ACTION_TYPES.REMOVE_FROM_FAVS:
       return {
         ...state,
-        favs: state.favs.filter(fav => fav.id !== action.payload.id),
+        gallery: state.gallery.filter(fav => fav !== action.payload),
       };
     default:
       return state;

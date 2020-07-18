@@ -5,7 +5,7 @@ import styles from './App.module.scss';
 import { Routes } from './constants';
 import { Header } from './components';
 import { Home } from './pages';
-import { Favs } from './pages';
+import { Gallery } from './pages';
 
 function App() {
   return (
@@ -17,7 +17,7 @@ function App() {
         <section className={styles.sectionWrapper}>
           <Switch>
             <Route exact path={Routes.home.path} component={Home} />
-            <Route exact path={Routes.favs.path} component={Favs} />
+            <Route exact path={Routes.gallery.path} component={Gallery} />
             <Route path="*">
               <Redirect to={Routes.home.path} />
             </Route>
