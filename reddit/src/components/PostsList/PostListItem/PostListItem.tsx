@@ -3,12 +3,10 @@ import { useDispatch } from 'react-redux';
 
 import styles from './PostListItem.module.scss';
 import { SinglePostItem } from '../../../models';
-import { Fav } from '../../Fav';
-import { Comments } from '../../Comments';
-import { PostListItemDelete } from './PostListItemDelete';
-import { PostListItemRead } from './PostListItemRead';
+import { Read } from '../../Read';
 import { ago } from '../../../utils';
 import { ACTION_TYPES, ActionDispatcher } from '../../../store/actions';
+import { ItemActions } from '../../ItemActions';
 
 interface Props {
   item: SinglePostItem;
@@ -28,18 +26,10 @@ export function PostListItem({ item, onItemSelected }: Props) {
       </div>
       <div className={styles.author}>
         <span>{item.author + ' - ' + ago(item.created)}</span>
-        <PostListItemRead read={item.read} />
+        <Read read={item.read} />
       </div>
       <div className={styles.footer}>
-        <div>
-          <Comments comments={item.comments} />
-        </div>
-        <div>
-          <Fav item={item} />
-        </div>
-        <div>
-          <PostListItemDelete itemId={item.id} />
-        </div>
+        <ItemActions item={item} />
       </div>
     </div>
   );

@@ -1,13 +1,15 @@
 import React, { Dispatch, SetStateAction, useState } from 'react';
 import { TrashFill } from 'react-bootstrap-icons';
 import { Button, Modal } from 'react-bootstrap';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
-import { ACTION_TYPES, ActionDispatcher } from '../../../../store/actions';
+import { ACTION_TYPES, ActionDispatcher } from '../../store/actions';
 
-export function PostListItemDelete({ itemId }: { itemId: number }) {
+export function Delete({ itemId }: { itemId: number }) {
   const dispatch = useDispatch();
+  const posts = useSelector(({ redditState }) => redditState.posts);
   const [show, setShow] = useState<boolean>(false);
+  const showDeleteButton = posts.find(post => post.id === itemId);
 
   const close = handleClose(setShow);
   const confirm = handleConfirm(dispatch, setShow, itemId);
@@ -15,9 +17,11 @@ export function PostListItemDelete({ itemId }: { itemId: number }) {
 
   return (
     <>
-      <Button variant="danger" size="sm" onClick={openModal}>
-        <TrashFill /> Delete
-      </Button>
+      {showDeleteButton && (
+        <Button variant="danger" size="sm" onClick={openModal}>
+          <TrashFill /> Delete
+        </Button>
+      )}
       <Modal show={show} onHide={close}>
         <Modal.Header closeButton>
           <Modal.Title>Delete Item</Modal.Title>
