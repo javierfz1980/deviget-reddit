@@ -2,7 +2,7 @@ import { applyMiddleware, combineReducers, createStore } from 'redux';
 import { redditStateReducer } from './reducer';
 import { createEpicMiddleware } from 'redux-observable';
 import { composeWithDevTools } from 'redux-devtools-extension';
-import { fetchPostsEpic } from './epics';
+import { fetchPostsEpic, saveStateEpic } from './epics';
 
 // Create Middelware
 const observableMiddleware = createEpicMiddleware();
@@ -17,3 +17,4 @@ export const store = createStore(
 
 // Run middleware epics/effects
 observableMiddleware.run(fetchPostsEpic);
+observableMiddleware.run(saveStateEpic);

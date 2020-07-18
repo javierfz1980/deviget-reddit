@@ -1,6 +1,7 @@
-import { POST_LIMIT } from '../constants';
+import { LS_KEY, POST_LIMIT } from '../constants';
 import { Action, ACTION_TYPES } from './actions';
 import { SinglePostItem } from '../models';
+import { loadFromLocalStorage } from '../utils';
 
 export interface RedditState {
   shouldRequest: boolean;
@@ -26,8 +27,10 @@ export const initialRedditState: RedditState = {
   dismissed: false,
 };
 
-export function redditStateReducer(state: RedditState = initialRedditState, action: Action): RedditState {
-  console.log('after:', action?.payload?.after);
+export function redditStateReducer(
+  state: RedditState = loadFromLocalStorage(LS_KEY) || initialRedditState,
+  action: Action,
+): RedditState {
   switch (action.type) {
     case ACTION_TYPES.FETCH_POSTS:
       return {
@@ -65,6 +68,7 @@ export function redditStateReducer(state: RedditState = initialRedditState, acti
       return {
         ...state,
         posts: state.posts.filter(post => post.id !== action.payload),
+        selectedItem: state.selectedItem?.id === action.payload ? undefined : state.selectedItem,
       };
     case ACTION_TYPES.ADD_TO_FAVS:
       return {
