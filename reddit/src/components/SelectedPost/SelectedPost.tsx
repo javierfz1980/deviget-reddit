@@ -5,12 +5,17 @@ import { Card } from 'react-bootstrap';
 import { ago } from '../../utils';
 import { NoContent } from '../NoContent';
 import { ItemActions } from '../ItemActions';
+import styles from '../PostsList/PostsList.module.scss';
 
 export function SelectedPost() {
   const selectedItem = useSelector(({ redditState }) => redditState.selectedItem);
 
   if (!selectedItem) {
-    return <NoContent />;
+    return (
+      <h1 className={styles.noConents}>
+        <NoContent />
+      </h1>
+    );
   }
 
   return (
