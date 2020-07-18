@@ -1,0 +1,9 @@
+.mainWrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  .sectionWrapper {
+    flex-grow: 1;
+  }
+}
