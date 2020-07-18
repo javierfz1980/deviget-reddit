@@ -40,6 +40,7 @@
   },
   "scripts": {
     "start": "serve -s build",
+    "start:local": "npm run build && serve -s build",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "test:no-watch": "CI=true npm run test",
