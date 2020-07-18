@@ -13,7 +13,7 @@ interface Props {
 export function Fav({ item }: Props) {
   const dispatch = useDispatch();
   const gallery = useSelector(({ redditState }) => redditState.gallery);
-  const isInFavs = gallery.some(fav => fav.id === item.id);
+  const isInFavs = gallery.some(fav => fav === item.preview);
   const text = isInFavs ? 'Remove' : 'Add';
   const variant = isInFavs ? 'danger' : 'primary';
   const click = () =>
