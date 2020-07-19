@@ -11,6 +11,7 @@
 - [App requirements](#app-requirements)
 - [Start](#start)
 - [MAin Stack](#main-stack)
+- [Important Notes](#important-notes)
 - [Live demo](#live-demo)
 - [Authors](#authors)
 
@@ -41,12 +42,15 @@ The app should be able to show data from each entry such as:
 
 ## Start 
 
-Clone repository (`git clone https://github.com/javierfz1980/Front-end/tree/master/reddit`)
+Clone repository (`git clone https://github.com/javierfz1980/Front-end.git`)
  
 ```bash
- cd reddit
+ cd Front-end/reddit
  yarn / npm install
  npm run start:local //This will open up a browser window on http://localhost:5000
+
+ (optional)
+ npm run start:dev (provided for local watch development)
  
  ```
 ## Main Stack
@@ -64,10 +68,18 @@ Clone repository (`git clone https://github.com/javierfz1980/Front-end/tree/mast
 
 Also Prettier, husky, moment, etc...
 
+## Important notes
+
+- i18n was introduce just as a basic example, only in the Navigation items, translation should be added to the entire app.
+- Unit Testing was introduce just as a basic example, only on the state reducer, more unit testing can (and should) be aded
+- Typescript (not mandatory) was introduced because typing (IMHO) should be mandatory for any modern frontend app. Same result could be achieved without typescript.
+- React bootstrap was introduced as a new component framework flavor (I never used it before, wanted to try something different).
+- Only basic css layout was apply in order to provide the minimum responsive requirements. Deeper design & UX work should be done.
+
 ## Live demo
 
 - Live app [link](https://deviget-reddit.herokuapp.com/).
-- Source code [here](https://github.com/javierfz1980/Front-end/tree/master/reddit). 
+- Source code [here](https://github.com/javierfz1980/Front-end.git). 
 
 ## Author
 
