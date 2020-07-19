@@ -84,6 +84,7 @@ export function redditStateReducer(
       return {
         ...state,
         posts: [],
+        selectedItem: undefined,
         dismissed: true,
         shouldRequest: false,
       };
