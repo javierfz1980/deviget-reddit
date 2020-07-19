@@ -3,7 +3,7 @@
 ## IMPORTANT: (Deliverables)
 
 - Live app [link](https://deviget-reddit.herokuapp.com/).
-- App Source code & Readme [here](https://github.com/javierfz1980/Front-end/tree/master/reddit). 
+- App Source code & Readme [here](https://github.com/javierfz1980/deviget-reddit/tree/master/reddit). 
 
 ## Objective
 We would like to have you complete the following code test so we can evaluate your Front-end skills.  Please place your code in a public Github repository and commit each step of your process so we can review it.
