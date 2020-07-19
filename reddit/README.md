@@ -42,7 +42,7 @@ The app should be able to show data from each entry such as:
 
 ## Start 
 
-Clone repository (`git clone https://github.com/javierfz1980/Front-end.git`)
+Clone repository (`git clone https://github.com/javierfz1980/deviget-reddit.git`)
  
 ```bash
  cd Front-end/reddit
@@ -79,7 +79,7 @@ Also Prettier, husky, moment, etc...
 ## Live demo
 
 - Live app [link](https://deviget-reddit.herokuapp.com/).
-- Source code [here](https://github.com/javierfz1980/Front-end.git). 
+- Source code [here](https://github.com/javierfz1980/deviget-reddit.git). 
 
 ## Author
 
