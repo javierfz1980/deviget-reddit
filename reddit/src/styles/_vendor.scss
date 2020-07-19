@@ -1,0 +1,17 @@
+body {
+ .btn-sm {
+   line-height: 1;
+ }
+
+  .nav-item {
+
+    a, a:hover {
+      text-decoration: none;
+    }
+
+    .active {
+      font-weight: bold;
+      background-color: #ededed;
+    }
+  }
+}
