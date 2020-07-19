@@ -11,7 +11,7 @@ export function GlobalActions() {
   return (
     <div className={styles.globalActionsWrapper}>
       <Button variant="warning" size="sm" onClick={() => dispatch({ type: ACTION_TYPES.RESET_STATE })}>
-        Restore
+        Fetch & Restore
       </Button>
       <Button variant="danger" size="sm" onClick={() => dispatch({ type: ACTION_TYPES.DELETE_ALL_POSTS })}>
         Delete All Posts
